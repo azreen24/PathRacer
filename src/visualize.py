@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def visualize_path(grid, path, start, goal, save_path="../results/bfs_path.png"):
+def visualize_path(grid, path, start, goal, save_path="../results/path.png", title="Path Visualization"):
     rows, cols = len(grid), len(grid[0])
     maze_array = np.zeros((rows, cols))
     for r in range(rows):
@@ -18,7 +18,7 @@ def visualize_path(grid, path, start, goal, save_path="../results/bfs_path.png")
 
     plt.scatter(start[1], start[0], color="green", marker="o", s=30, label="Start")
     plt.scatter(goal[1], goal[0], color="blue", marker="x", s=30, label="Goal")
-    plt.title("BFS Path Visualization")
+    plt.title(title)
     plt.legend()
     plt.axis("off")
     plt.tight_layout()
@@ -26,3 +26,4 @@ def visualize_path(grid, path, start, goal, save_path="../results/bfs_path.png")
     plt.close()
 
     print(f"Saved visualization to {save_path}")
+
